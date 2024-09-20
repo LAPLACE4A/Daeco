@@ -22,19 +22,19 @@ function Footer_nav(){
         <nav className="flex flex-row justify-around">
 
             <button onClick={navHome} className="flex flex-col w-1/4 min-w-15 h-12 bg-yellow-400 text-unclick-text items-center justify-center overflow-hidden">
-                <img src='./src/assets/menu_home.png' className="size-4"/>
+                <img src='public/menu_home.png' className="size-4"/>
                 <p className="text-sm">home</p>
             </button>
             <button onClick={navFeed} className="flex flex-col w-1/4 min-w-15 h-12 bg-white text-unclick-text items-center justify-center overflow-hidden">
-                <img src='./src/assets/menu_feed.png' className="size-4"/>
+                <img src='public/menu_feed.png' className="size-4"/>
                 <p className="text-sm">feed</p>
             </button>
             <button onClick={navPoint} className="flex flex-col w-1/4 min-w-15 h-12 bg-white text-unclick-text items-center justify-center overflow-hidden">
-                <img src='./src/assets/menu_point.png' className="size-4"/>
+                <img src='public/menu_point.png' className="size-4"/>
                 <p className="text-sm">point</p>
             </button>
             <button onClick={navProfile} className="flex flex-col w-1/4 min-w-15 h-12 bg-white text-unclick-text items-center justify-center overflow-hidden">
-                <img src='./src/assets/menu_profile.png' className="size-4"/>
+                <img src='public/menu_profile.png' className="size-4"/>
                 <p className="text-sm">profile</p>
             </button>
 
