@@ -26,3 +26,5 @@ router.put("/:id", updateCourse);
 
 // course 삭제하기
 router.delete("/:id", deleteCourse);
+
+module.exports = router;

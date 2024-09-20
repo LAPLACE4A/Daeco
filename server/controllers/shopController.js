@@ -1,7 +1,7 @@
-const shop = require("../models/shopModel");
+const shop = require("../models/Shop");
 
 // 모든 상점 가져오기
-exports.getShops = async (req, res) => {
+exports.getAllShop = async (req, res) => {
   try {
     const shops = await shop.find();
     res.json(shops);
@@ -11,7 +11,7 @@ exports.getShops = async (req, res) => {
 };
 
 // 특정 상점 가져오기
-exports.getShop = async (req, res) => {
+exports.getShopById = async (req, res) => {
   try {
     const shop = await shop.findById(req.params.id);
     if (!shop) {
@@ -41,7 +41,7 @@ exports.createShop = async (req, res) => {
 };
 
 // 상점 수정하기
-exports.modifyShop = async (req, res) => {
+exports.updateShop = async (req, res) => {
   try {
     const shop = await shop.findById(req.params.id);
     if (!shop) {

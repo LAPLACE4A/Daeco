@@ -1,15 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const {
-  getShops,
+  getAllShop,
   getShopById,
   createShop,
-  modifyShop,
+  updateShop,
   deleteShop,
 } = require("../controllers/shopController");
 
 // 모든 상점 가져오기
-router.get("/", getShops);
+router.get("/", getAllShop);
 
 // 특정 상점 가져오기
 router.get("/:id", getShopById);
@@ -18,7 +18,7 @@ router.get("/:id", getShopById);
 router.post("/", createShop);
 
 // 상점 수정하기
-router.put("/:id", modifyShop);
+router.put("/:id", updateShop);
 
 // 상점 삭제하기
 router.delete("/:id", deleteShop);

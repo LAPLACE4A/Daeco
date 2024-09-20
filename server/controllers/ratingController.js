@@ -1,4 +1,14 @@
-const Rating = require("../models/rating");
+const Rating = require("../models/Rating");
+
+// 모든 rating 가져오기
+exports.getAllRatings = async (req, res) => {
+  try {
+    const ratings = await Rating.find();
+    res.json(ratings);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 
 // id로 rating 찾기
 exports.getRatingById = async (req, res) => {
@@ -33,7 +43,7 @@ exports.createRating = async (req, res) => {
 };
 
 // rating 수정하기
-exports.modifyRating = async (req, res) => {
+exports.updateRating = async (req, res) => {
   try {
     const rating = await Rating.findById(req.params.id);
     if (!rating) {

@@ -1,7 +1,7 @@
 const User = require("../models/User");
 const Course = require("../models/Course");
 
-//CREATE USER
+//유저 생성하기
 exports.createUser = async (req, res) => {
   const { name, email, profile_picture, gender, age, mbti, role, point } =
     req.body;
@@ -24,7 +24,7 @@ exports.createUser = async (req, res) => {
   }
 };
 
-//GET ALL USERS
+//모든 유저 가져오기
 exports.getAllUsers = async (req, res) => {
   try {
     const users = await User.find();
@@ -34,7 +34,7 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
-//GET USER BY ID
+//특정 유저 가져오기
 exports.getUserById = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -47,7 +47,7 @@ exports.getUserById = async (req, res) => {
   }
 };
 
-//MODIFY USER
+//유저 수정하기
 exports.modifyUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -69,7 +69,25 @@ exports.modifyUser = async (req, res) => {
   }
 };
 
-//DELETE USER
+//유저 업데이트하기
+exports.updateUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    user.name = req.body.name || user.name;
+    user.email = req.body.email || user.email;
+    user.profile_picture = req.body.profile_picture || user.profile_picture;
+
+    await user.save();
+    res.json(user);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
+//유저 삭제하기
 exports.deleteUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);

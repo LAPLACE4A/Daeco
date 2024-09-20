@@ -1,4 +1,4 @@
-const User = require("../models/userModel");
+const User = require("../models/User");
 
 // 특정 사용자의 포인트 가져오기
 exports.getPoint = async (req, res) => {
