@@ -1,4 +1,4 @@
-const event = require("../models/eventModel");
+const event = require("../models/Event");
 
 // 모든 행사 가져오기
 exports.getAllEvents = async (req, res) => {
