@@ -57,5 +57,5 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/courses", courseRoutes);
 app.use("/ratings", ratingRoutes);
-app.use("/point", pointRoutes);
-app.use("/shop", shopRoutes);
+app.use("/points", pointRoutes);
+app.use("/shops", shopRoutes);
