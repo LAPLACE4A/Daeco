@@ -5,7 +5,6 @@ const {
   getCourseById,
   getCoursesByUser,
   createCourse,
-  createManyCourses,
   updateCourse,
   deleteCourse,
 } = require("../controllers/courseController");
