@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         'unclick-text': '#666666',
+        'clicked-menu' :'#2C98F0',
       },
     },
   },
