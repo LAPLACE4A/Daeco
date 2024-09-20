@@ -11,6 +11,7 @@ const courseRoutes = require("./routes/courseRoutes");
 const ratingRoutes = require("./routes/ratingRoutes");
 const pointRoutes = require("./routes/pointRoutes");
 const shopRoutes = require("./routes/shopRoutes");
+const eventRoutes = require("./routes/eventRoutes");
 
 dotenv.config();
 app.use(
@@ -59,3 +60,4 @@ app.use("/courses", courseRoutes);
 app.use("/ratings", ratingRoutes);
 app.use("/points", pointRoutes);
 app.use("/shops", shopRoutes);
+app.use("/events", eventRoutes);
