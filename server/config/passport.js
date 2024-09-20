@@ -10,8 +10,8 @@ passport.use(
   new KakaoStrategy(
     {
       clientID: dotenv.KAKAO_API_KEY,
-      clientSecret: "YOUR_KAKAO_CLIENT_SECRET",
-      callbackURL: "http://localhost:3000/auth/kakao/callback",
+      clientSecret: dotenv.KAKAO_API_SECRET,
+      callbackURL: "https://daeco.vercel.app/auth/kakao/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
@@ -59,7 +59,7 @@ passport.use(
     {
       clientID: "YOUR_NAVER_CLIENT_ID",
       clientSecret: "YOUR_NAVER_CLIENT_SECRET",
-      callbackURL: "http://localhost:3000/auth/naver/callback",
+      callbackURL: "https://daeco.vercel.app/auth/naver/callback",
     },
     (accessToken, refreshToken, profile, done) => {
       // 사용자 정보 저장 또는 데이터베이스와의 연동 로직
