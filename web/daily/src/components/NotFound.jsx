@@ -4,7 +4,7 @@ function NotFound(){
             <p>존재하지 않는 페이지입니다.</p>
             <button>
                 <div>
-                    <img src="public/menu_home.png"/>
+                    <img src="../public/menu_home.png"/>
                     <p>홈으로 돌아가기</p>
                 </div>
             </button>
