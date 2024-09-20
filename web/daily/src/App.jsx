@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
-import Profile from './components/profile'
+import Profile from './components/Profile'
 import Login from './components/Login'
 import NotFound from './components/NotFound'
 
