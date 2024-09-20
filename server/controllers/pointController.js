@@ -11,7 +11,7 @@ exports.getPoint = async (req, res) => {
 };
 
 // 포인트 수정하기
-exports.modifyPoint = async (req, res) => {
+exports.updatePoint = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
     user.point = req.body.point;
