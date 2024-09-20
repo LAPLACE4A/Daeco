@@ -10,11 +10,11 @@ function Profile(){
     }
 
     return(
-        <div className="flex flex-col w-full h-full bg-white">
-            <div id='profile-bg' className="w-full h-1/3 top-0 left-0 bg-white">
-                <div id='profile-user' className="flex flex-col w-auto m-10 p-5 bg-green-300">
+        <div className="flex flex-col w-full h-full bg-yellow-100">
+            <div id='profile-bg' className="w-full h-1/3 bg-white">
+                <div id='profile-user' className="flex flex-col w-auto m-5 p-5 bg-gray-100 shadow-md rounded-xl">
                     <div id='user_image' className="m-auto p-5">
-                        <img src="/menu_home.png" className="size-auto"/>
+                        <img src="/menu_profile.svg" className="size-16"/>
                     </div>
                     <div id='user_simple_info' className="flex flex-row justify-around">
                         <h1>나이</h1>
