@@ -15,7 +15,7 @@ function kakaoMap(){
       }, [])
 
     return(
-        <div id='feed-map' className="w-full h-full z-0 mx-auto mt-5 rounded-xl"/>
+        <div id='feed-map' className="w-full h-full z-0 rounded-xl"/>
 
     )
 }
