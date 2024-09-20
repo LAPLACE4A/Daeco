@@ -8,8 +8,8 @@ function Home(){
                 <div id="img-scroll-banner" className="absolute w-full h-1/3 bg-indigo-400">
                     <div className="flex flex-row">
                         <img src="풍경1.jpg" className="object-cover"/>
-                        <img src="풍경2.jpg" className="object-contain overflow-hidden"/>
-                        <img src="풍경3.jpg" className="object-contain overflow-hidden"/>
+                        <img src="풍경2.jpg" className="object-cover overflow-hidden"/>
+                        <img src="풍경3.jpg" className="object-cover overflow-hidden"/>
                     </div>
                 </div>
 
