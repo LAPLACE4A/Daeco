@@ -5,26 +5,24 @@ function Feed(){
 
     return(
         <div className="flex flex-col w-full h-full bg-white">
-            <div id="feed-container" className="w-full h-screen bg-yellow-200">
-                <div id="feed-ui" className="flex flex-row w-auto m-3 p-3 bg-green-200 justify-between">
-                    <div id="feed-ui-texts" className="flex flex-col bg-violet-200">
-                        <h1>여행 코스 Map</h1>
-                        <p>원하는 지역의 여행 코스 확인하기</p>
-                    </div>
-
-                    <div id="feed-ui-icons" className="flex flex-row bg-indigo-200 items-center">
-                        <img src="/feed_search.svg" className="size-6"/>
-                        <img src="/feed_profile.svg" className="size-8"/>
-                    </div>
+            <div id="feed-container" className="flex flex-row w-full bg-yellow-200 justify-between my-5 px-3 items-center">
+                <div id="feed-ui-texts" className="flex flex-col bg-indigo-200 ">
+                    <h1>코스 추천 FEED</h1>
+                    <p>유저가 제작한 대구 코스 체험 평가</p>
                 </div>
-
-                <div id="feed-map-container" className="w-full h-3/4 p-5 pb-7">
-                    <KakaoMap/>
+                <div id="feed-ui-icons" className="flex flex-row justify-around">
+                    <button className="flex bg-indigo-200 items-center p-3">
+                            <img src="/feed_search.svg" className="size-8"/>
+                    </button>
+                    <button className="flex bg-indigo-200 items-center p-3">
+                            <img src="/feed_create.svg" className="size-9"/>
+                    </button>
                 </div>
+            </div>
 
-                <div id="feed-recommend" className="w-full h-auto bg-white overflow-scroll">
-                    Hello
-                </div>
+            <div id="feed-recommend" className="w-full h-auto bg-white overflow-scroll">
+                Hello
+                {/*feed 추가*/}
             </div>
             <Footer_nav/>
         </div>
