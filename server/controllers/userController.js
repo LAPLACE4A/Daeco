@@ -1,5 +1,4 @@
 const User = require("../models/User");
-const Course = require("../models/Course");
 
 //유저 생성하기
 exports.createUser = async (req, res) => {
@@ -48,7 +47,7 @@ exports.getUserById = async (req, res) => {
 };
 
 //유저 수정하기
-exports.modifyUser = async (req, res) => {
+exports.updateUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
     if (!user) {
@@ -62,24 +61,6 @@ exports.modifyUser = async (req, res) => {
     user.mbti = req.body.mbti;
     user.role = req.body.role;
     user.point = req.body.point;
-    await user.save();
-    res.json(user);
-  } catch (error) {
-    res.status(404).json({ message: error.message });
-  }
-};
-
-//유저 업데이트하기
-exports.updateUser = async (req, res) => {
-  try {
-    const user = await User.findById(req.params.id);
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
-    user.name = req.body.name || user.name;
-    user.email = req.body.email || user.email;
-    user.profile_picture = req.body.profile_picture || user.profile_picture;
-
     await user.save();
     res.json(user);
   } catch (error) {
