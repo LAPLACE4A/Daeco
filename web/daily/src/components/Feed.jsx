@@ -14,8 +14,8 @@ function Feed(){
                         </div>
 
                         <div id="feed-ui-icons" className="flex flex-row bg-indigo-200 items-center">
-                            <img src="feed_search.svg" className="size-6"/>
-                            <img src="feed_profile.svg" className="size-8"/>
+                            <img src="/feed_search.svg" className="size-6"/>
+                            <img src="/feed_profile.svg" className="size-8"/>
                         </div>
                     </div>
 
