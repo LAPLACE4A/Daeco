@@ -4,7 +4,7 @@ const {
   getAllRatings,
   getRatingById,
   createRating,
-  modifyRating,
+  updateRating,
   deleteRating,
 } = require("../controllers/ratingController");
 
@@ -18,7 +18,7 @@ router.get("/:id", getRatingById);
 router.post("/", createRating);
 
 // rating 수정하기
-router.put("/:id", modifyRating);
+router.put("/:id", updateRating);
 
 // rating 삭제하기
 router.delete("/:id", deleteRating);

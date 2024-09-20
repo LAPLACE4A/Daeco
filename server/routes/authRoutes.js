@@ -1,6 +1,6 @@
 const express = require("express");
 const passport = require("passport");
-require("../config/passport"); // passport 설정 파일 로드
+require("../config/passport");
 
 const router = express.Router();
 
@@ -11,7 +11,7 @@ router.get("/kakao", passport.authenticate("kakao"));
 router.get(
   "/kakao/callback",
   passport.authenticate("kakao", {
-    failureRedirect: "/",
+    failureRedirect: "/auth",
   }),
   (req, res) => {
     res.redirect("/");
@@ -25,7 +25,7 @@ router.get("/naver", passport.authenticate("naver"));
 router.get(
   "/naver/callback",
   passport.authenticate("naver", {
-    failureRedirect: "/",
+    failureRedirect: "/auth",
   }),
   (req, res) => {
     res.redirect("/");
@@ -34,9 +34,8 @@ router.get(
 
 // 로그아웃
 router.get("/logout", (req, res) => {
-  req.logout(() => {
-    res.redirect("/");
-  });
+  req.logout();
+  res.redirect("/");
 });
 
 module.exports = router;

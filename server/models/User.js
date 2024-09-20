@@ -5,7 +5,7 @@ const UserSchema = new mongoose.Schema(
   {
     _id: {
       type: String,
-      default: uuidv4,
+      default: () => uuidv4(),
     },
     name: {
       type: String,
@@ -24,7 +24,7 @@ const UserSchema = new mongoose.Schema(
       required: true,
     },
     age: {
-      type: String,
+      type: Number,
       required: true,
     },
     mbti: {
