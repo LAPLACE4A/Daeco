@@ -8,6 +8,7 @@ import UserInfomation from './components/UserInfomation'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import NotFound from './components/NotFound'
+//import Loding from './components/Loding'
 
 function App() {
   return (

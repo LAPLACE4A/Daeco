@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Footer_nav from "./Footer_nav";
+import Loding from "./Loding";
+import event from '../../../../application/event.json'
 
 const TravelCardsHorizontal = ({ cards }) => {
   return (
@@ -25,6 +27,9 @@ const TravelCardsHorizontal = ({ cards }) => {
 };
 
 function Home() {
+  
+  const festivalName = event.name.toString()
+  const festivalPeriod = event.period[0].toString() + " ~ " + event.period[1].toString()
   //
   const [courseCards, setcourseCards] = useState([]);
   const [placeCards, setPlaceCards] = useState([]);
@@ -55,7 +60,7 @@ function Home() {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loding/>
   }
 
   if (error) {
@@ -81,7 +86,7 @@ function Home() {
             className="w-full h-10 mb-10 rounded-xl bg-clicked-menu shadow-lg text-center content-center"
           >
             <h1 className="font-LINESeedKR_Bd text-xl text-white">
-              최신 대구 페스티벌
+              {festivalName} ( {festivalPeriod} )
             </h1>
             {/* festival 추가 */}
           </div>

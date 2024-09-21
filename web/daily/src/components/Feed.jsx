@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 import Footer_nav from "./Footer_nav"
 import RatesFeed from "./RatesFeed";
+import Loding from "./Loding";
 
 //feedCard 컴포넌트 생성
 const FeedCard = ({ cards, openRatesModal }) => {
@@ -22,18 +23,20 @@ const FeedCard = ({ cards, openRatesModal }) => {
                     <div id="user-context-container" className="flex flex-col w-full">
                         <div id="user-context-header" className="flex flex-row justify-between items-center">
                             <div id="user-context-icons" className="items-center">
-                                <h1 className="font-LINESeedKR_Bd text-md">{card.star}</h1>
+                                <h1 className="font-LINESeedKR_Bd text-md">{card.stars}</h1>
                                     <button>
-                                        {Boolean(card.isGivedRate) ? <img src="/feed/icon/feed_filled_star.svg" onClick={openRatesModal} className="size-6 mr-3"/> : <img src="/feed/icon/feed_unfilled_star.svg" className="size-6 mr-3"/>}
+                                        {Boolean(card.isGivedRate) ? <img src="/feed/icon/feed_filled_star.svg" onClick={openRatesModal} className="size-6 mr-3"/> : <img src="/feed/icon/feed_unfilled_star.svg" onClick={openRatesModal} className="size-6 mr-3"/>}
                                     </button>
+                                    {/*  공유기능
                                     <button>
                                         <img src="/feed/icon/feed_share.svg" className="size-6"/>
                                     </button>
+                                    */}
                             </div>
                             <h1 id="user-context-tag" className="font-LINESeedKR_Th text-md">{card.hashtag}</h1>
                         </div>
                         
-                            <h1 id="user-context-title" className="text-md">{card.id} | {card.title}</h1>
+                            <h1 id="user-context-title" className="text-md">{card.id} | {card.course_id}</h1>
                             <h1 id="user-context-content" className="text-sm">{card.content}</h1>
                         </div>
                 </div>
@@ -44,6 +47,7 @@ const FeedCard = ({ cards, openRatesModal }) => {
 
 function Feed(){
     // feed 데이터
+    {/*
     const feedCards = [
         {
             id: "ces_1jk",
@@ -73,24 +77,41 @@ function Feed(){
             isGivedRate:false
         },
       ];
-    
-    const navigate = useNavigate()
 
+    */}
+
+    const navigate = useNavigate()
     const gotoCourseMaker = () =>{
         navigate("/feed/maker")
     }
 
     const [isModalOpen, setModalOpen] = useState(false);
-
     function openRatesModal(){
         setModalOpen(true)
     }
-
     function closeRatesModal(){
         setModalOpen(false)
     }
 
+    const [feedCards, setfeedCards] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    const fetchTravelData = async () => {
+        try {
+        const feeds = await fetch("https://daeco-d6m0.onrender.com/ratings");
+        const feedsData = await feeds.json();
+        setfeedCards(feedsData);
+
+        setLoading(false);
+        } catch (error) {
+        setError(`Fetch error: ${error.message}. Stack: ${error.stack}`);
+        setLoading(false);
+        }
+    };
+
     useEffect(() => {
+        fetchTravelData();
         if (isModalOpen) {
             document.body.style.overflow = "hidden"; // 스크롤 비활성화
         } else {
@@ -100,7 +121,14 @@ function Feed(){
         return () => {
             document.body.style.overflow = "auto"; // 컴포넌트 언마운트 시 기본값으로 복원
         };
-    }, [isModalOpen]);
+    }, []);
+
+    if (loading) {
+        return <Loding/>
+    }
+    if (error) {
+        return <p>{error}</p>;
+    }
 
     return(
         <div className="flex flex-col w-full h-full bg-white">
