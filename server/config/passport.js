@@ -125,12 +125,12 @@ passport.use(
 
 // 사용자 세션 관리
 passport.serializeUser((user, done) => {
-  done(null, user.id); // 세션에 user.id 저장
+  done(null, user._id);
 });
 
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await User.findById(id); // 세션에서 id를 바탕으로 사용자 정보 조회
+    const user = await User.findById(id);
     done(null, user);
   } catch (err) {
     done(err, null);
