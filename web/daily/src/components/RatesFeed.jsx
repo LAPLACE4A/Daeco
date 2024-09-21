@@ -24,9 +24,9 @@ function RatesFeed({ isOpen, closeModal }){
                         </div>
 
                         <div className="flex flex-col w-full h-auto items-center overflow-hidden">
-                            <div className="flex flex-row w-auto h-20 justify-around rounded-full items-center bg-black bg-opacity-70 my-5">
+                            <div className="flex flex-row w-auto h-20 justify-around rounded-xl items-center bg-black bg-opacity-70 my-5 px-5">
                                 {[1, 2, 3, 4, 5].map((rate) => (
-                                        <img key={rate} id={`rate_${rate}`} src={rate <= rates ? "/feed/icon/feed_filled_star.svg" : "/feed/icon/feed_unfilled_star.svg"} className="size-20 px-3"/>
+                                        <img key={rate} id={`rate_${rate}`} src={rate <= rates ? "/feed/icon/feed_filled_star.svg" : "/feed/icon/feed_unfilled_star.svg"} className="size-1/2"/>
                                 ))}
                             </div>
                             <input type="range" min="1" max="5" value={rates} onChange={handelChange} className="flex w-full h-full accent-clicked-menu"/>
