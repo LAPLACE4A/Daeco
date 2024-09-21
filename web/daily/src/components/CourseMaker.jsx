@@ -1,58 +1,55 @@
-import { useState } from 'react';
-import Footer_nav from "./Footer_nav"
+import Footer_nav from "./Footer_nav";
+
+const CourseCard = ({ cards }) => { //Course example content 컴포넌트 추가
+    return (
+        <div id="course-template" className="flex flex-wrap w-full h-screen p-10 overflow-y-scroll scrollbar-hide overflow-hidden justify-center">
+            {cards.map((card, index)=>(
+                <button key={index}>
+                    <div className="min-w-[250px] max-w-[250px] min-h-[300px] max-h-[300px] bg-emerald-300 rounded-lg shadow-lg flex-shrink-0 mb-24 m-10">
+                        <div className="p-4">
+                            <img src='/home/풍경1.jpg' className="mb-5"/>
+                            <h3 className="font-bold text-lg">{card.name}</h3>
+                            <p className="text-gray-600">{card.content}</p>
+                        </div>
+                    </div>
+                </button>
+            ))}
+        </div>
+    );
+  };
 
 function CourseMaker(){
 
-    const mbti = ['enfp', 'enfj', 'entp', 'entj', 'esfp', 'esfj', 'estp', 'estj', 'infp', 'infj', 'intp', 'intj', 'isfp', 'isfj', 'istp', 'istj']
-
-    const [isSelectedMale, setGender] = useState(false)
-
-    const ToggleGender = () =>{
-        setGender(isSelectedMale => !isSelectedMale)
-    }
+    const courseCards = [
+        {
+            name: "1번 템플릿",
+            content: "1번템플릿임",
+            url:"template_1"
+        },
+        {
+            name: "2번 템플릿",
+            content: "2번템플릿임"
+        },
+        {
+            name: "3번 템플릿",
+            content: "3번템플릿임"
+        },
+        {
+            name: "4번 템플릿",
+            content: "4번템플릿임"
+        },
+    ]
 
     return(
-        <>
-                <div id="maker-container" className="w-full h-screen p-10 bg-white">
-            <div id="ui-header" className="flex flex-row items-center p-5">
-                <img src="/logo.jpg" className="size-16 rounded-full mr-10"/>
-                <div id="ui-header-text" className="flex flex-col">
-                    <h1 className="font-LINESeedKR_Bd text-2xl">Daeco</h1>
-                    <h1 className="text-xl">코스 메이커 정보 입력 </h1>
-                </div>
+        <div className="w-full h-full">
+        <div id="maker-container" className="flex flex-col w-full h-screen bg-white z-10">
+            <div id="maker-ui" className="flex flex-row justify-between p-5 bg-white shadow-lg">
+                <h1 className="font-LINESeedKR_Bd text-2xl">맞춤 코스 메이커</h1>
             </div>
-            <div id="ui-forms" className="flex flex-col m-5">
-                <div id="ui-fomrs-age-gender" className="flex flex-col">
-                    <h1 className='font-LINESeedKR_Bd text-xl'>나이</h1>
-                    <div className='flex flex-row justify-between'>
-                        <input id="ui-forms-age" type="number" required className="w-56 h-10 border-t-0 border-l-0 border-r-0 border-b-4 border-gray-400"/>
-                        <div id="ui-forms-gender" className='ml-5'>
-                            <button id="gender-male" onClick={ToggleGender} className={`w-10 h-10 font-LINESeedKR_Bd text-xl ${isSelectedMale ? 'bg-yellow-300' : 'bg-gray-200'}`}>남</button>
-                            <button id="gender-female" onClick={ToggleGender} className={`w-10 h-10 font-LINESeedKR_Bd text-xl ${isSelectedMale ? 'bg-gray-200' : 'bg-yellow-300'}`}>여</button>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div id="ui-forms-mbti" className='flex flex-row w-full py-10 justify-between items-center'>
-                    <h1 className='font-LINESeedKR_Bd text-xl mr-5'>MBTI</h1>
-                    <select required className='w-64 h-12 p-auto border-b-4 border-gray-400'>
-                        {mbti.map((item, index) =>(
-                            <option key={index} value={item}>{item}</option>
-                        ))}
-                    </select>
-                </div>
-                <div id="ui-forms-role">
-
-                </div>
-                <div>
-                    
-                </div>
-            </div>
-
+            <CourseCard cards={courseCards}/>
         </div>
         <Footer_nav/>
-        </>
+    </div>
     )
 }
 

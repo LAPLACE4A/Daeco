@@ -1,5 +1,7 @@
 import { useEffect } from "react"
 
+const { kakao } = window
+
 function KakaoMap({addr, index_id}){
 
     var lat = 37.365264512305174

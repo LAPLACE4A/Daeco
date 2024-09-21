@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Footer_nav from "./Footer_nav";
+import Loding from "./Loding";
+import event from '../../../../application/event.json'
 
 const TravelCardsHorizontal = ({ cards }) => {
   return (
@@ -25,6 +27,10 @@ const TravelCardsHorizontal = ({ cards }) => {
 };
 
 function Home() {
+  
+  const festivalName = event.name.toString()
+  const festivalPeriod = event.period[0].toString() + " ~ " + event.period[1].toString()
+  //
   const [courseCards, setcourseCards] = useState([]);
   const [placeCards, setPlaceCards] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -54,13 +60,14 @@ function Home() {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loding/>
   }
 
   if (error) {
     return <p>{error}</p>;
   }
 
+  //
   return (
     <div className="w-full h-full">
       <div id="home_contents" className="w-full h-full">
@@ -68,9 +75,9 @@ function Home() {
           id="img-scroll-banner"
           className="flex flex-row w-full h-1/3 bg-black-0"
         >
-          <img src="풍경1.jpg" className="object-cover" />
-          <img src="풍경2.jpg" className="object-cover overflow-hidden" />
-          <img src="풍경3.jpg" className="object-cover overflow-hidden" />
+          <img src={"/home/풍경1.jpg"} className="object-cover" />
+          <img src={"/home/풍경2.jpg"} className="object-cover overflow-hidden" />
+          <img src={"/home/풍경3.jpg"} className="object-cover overflow-hidden" />
         </div>
 
         <div className="absolute p-5 bg-white rounded-t-3xl left-0 bottom-0 w-full h-2/3 mb-20 overflow-scroll scrollbar-hide">
@@ -79,7 +86,7 @@ function Home() {
             className="w-full h-10 mb-10 rounded-xl bg-clicked-menu shadow-lg text-center content-center"
           >
             <h1 className="font-LINESeedKR_Bd text-xl text-white">
-              최신 대구 페스티벌
+              {festivalName} ( {festivalPeriod} )
             </h1>
             {/* festival 추가 */}
           </div>
