@@ -14,9 +14,10 @@ const shopRoutes = require("./routes/shopRoutes");
 const eventRoutes = require("./routes/eventRoutes");
 
 dotenv.config();
+
 app.use(
   cors({
-    origin: "daeco.vercel.app",
+    origin: ["http://localhost:5173", "https://daeco.vercel.app"],
   })
 );
 
