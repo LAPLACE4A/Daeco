@@ -8,13 +8,12 @@ const User = require("../models/User");
 dotenv.config();
 
 //Google OAuth 설정
-
 passport.use(
   new GoogleStrategy(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "https://daeco.vercel.app/auth/google/callback",
+      callbackURL: "https://daeco-d6m0.onrender.com/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
@@ -23,7 +22,7 @@ passport.use(
         let user = await User.findOne({ email: email });
 
         if (user) {
-          return done(null, user);
+          return done(null, { user, isNewUser: false });
         } else {
           user = new User({
             name: name || "Unknown",
@@ -36,7 +35,7 @@ passport.use(
             point: 0,
           });
           await user.save();
-          return done(null, user);
+          return done(null, { user, isNewUser: true });
         }
       } catch (error) {
         return done(error, false);
@@ -51,7 +50,7 @@ passport.use(
     {
       clientID: process.env.KAKAO_API_KEY,
       clientSecret: process.env.KAKAO_API_SECRET,
-      callbackURL: "https://daeco.vercel.app/auth/kakao/callback",
+      callbackURL: "https://daeco-d6m0.onrender.com/auth/kakao/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
@@ -65,7 +64,7 @@ passport.use(
         let user = await User.findOne({ email: email });
 
         if (user) {
-          return done(null, user);
+          return done(null, { user, isNewUser: false });
         } else {
           user = new User({
             name: name || "Unknown",
@@ -78,7 +77,7 @@ passport.use(
             point: 0,
           });
           await user.save();
-          return done(null, user);
+          return done(null, { user, isNewUser: true });
         }
       } catch (error) {
         return done(error, false);
@@ -93,7 +92,7 @@ passport.use(
     {
       clientID: process.env.NAVER_API_KEY,
       clientSecret: process.env.NAVER_API_SECRET,
-      callbackURL: "https://daeco.vercel.app/auth/naver/callback",
+      callbackURL: "https://daeco-d6m0.onrender.com/auth/naver/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
@@ -102,7 +101,7 @@ passport.use(
         let user = await User.findOne({ email: email });
 
         if (user) {
-          return done(null, user);
+          return done(null, { user, isNewUser: false });
         } else {
           user = new User({
             name: name || "Unknown",
@@ -115,7 +114,7 @@ passport.use(
             point: 0,
           });
           await user.save();
-          return done(null, user);
+          return done(null, { user, isNewUser: true });
         }
       } catch (error) {
         return done(error, false);
