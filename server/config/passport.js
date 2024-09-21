@@ -22,7 +22,7 @@ passport.use(
         let user = await User.findOne({ email: email });
 
         if (user) {
-          return done(null, { user, isNewUser: false });
+          return done(null, user);
         } else {
           user = new User({
             name: name || "Unknown",
@@ -35,7 +35,8 @@ passport.use(
             point: 0,
           });
           await user.save();
-          return done(null, { user, isNewUser: true });
+          user.isNewUser = true;
+          return done(null, user);
         }
       } catch (error) {
         return done(error, false);
@@ -64,7 +65,7 @@ passport.use(
         let user = await User.findOne({ email: email });
 
         if (user) {
-          return done(null, { user, isNewUser: false });
+          return done(null, user);
         } else {
           user = new User({
             name: name || "Unknown",
@@ -77,7 +78,8 @@ passport.use(
             point: 0,
           });
           await user.save();
-          return done(null, { user, isNewUser: true });
+          user.isNewUser = true;
+          return done(null, user);
         }
       } catch (error) {
         return done(error, false);
@@ -101,7 +103,7 @@ passport.use(
         let user = await User.findOne({ email: email });
 
         if (user) {
-          return done(null, { user, isNewUser: false });
+          return done(null, user);
         } else {
           user = new User({
             name: name || "Unknown",
@@ -114,7 +116,8 @@ passport.use(
             point: 0,
           });
           await user.save();
-          return done(null, { user, isNewUser: true });
+          user.isNewUser = true;
+          return done(null, user);
         }
       } catch (error) {
         return done(error, false);

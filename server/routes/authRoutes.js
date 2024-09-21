@@ -14,11 +14,10 @@ router.get(
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    failureRedirect: "/auth",
+    failureRedirect: "https://daeco.vercel.app/auth",
   }),
   (req, res) => {
-    const isNewUser = req.user.isNewUser;
-    if (isNewUser) {
+    if (req.user.isNewUser) {
       res.redirect("https://daeco.vercel.app/profile/change");
     } else {
       res.redirect("https://daeco.vercel.app");
@@ -27,17 +26,21 @@ router.get(
 );
 
 // Kakao 로그인
-router.get("/kakao", passport.authenticate("kakao"));
+router.get(
+  "/kakao",
+  passport.authenticate("kakao", {
+    scope: ["profile_nickname", "account_email"],
+  })
+);
 
 // Kakao 콜백
 router.get(
   "/kakao/callback",
   passport.authenticate("kakao", {
-    failureRedirect: "/auth",
+    failureRedirect: "https://daeco.vercel.app/auth",
   }),
   (req, res) => {
-    const isNewUser = req.user.isNewUser;
-    if (isNewUser) {
+    if (req.user.isNewUser) {
       res.redirect("https://daeco.vercel.app/profile/change");
     } else {
       res.redirect("https://daeco.vercel.app");
@@ -46,17 +49,19 @@ router.get(
 );
 
 // Naver 로그인
-router.get("/naver", passport.authenticate("naver"));
+router.get(
+  "/naver",
+  passport.authenticate("naver", { scope: ["profile", "email"] })
+);
 
 // Naver 콜백
 router.get(
   "/naver/callback",
   passport.authenticate("naver", {
-    failureRedirect: "/auth",
+    failureRedirect: "https://daeco.vercel.app/auth",
   }),
   (req, res) => {
-    const isNewUser = req.user.isNewUser;
-    if (isNewUser) {
+    if (req.user.isNewUser) {
       res.redirect("https://daeco.vercel.app/profile/change");
     } else {
       res.redirect("https://daeco.vercel.app");
