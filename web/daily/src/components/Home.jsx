@@ -62,20 +62,20 @@ function Home() {
 
   return (
     <div className="w-full h-full">
-      <div id="home_contents" className="w-full h-full bg-yellow-300">
+      <div id="home_contents" className="w-full h-full">
         <div
           id="img-scroll-banner"
-          className="flex flex-row w-full h-1/3 bg-indigo-400 z-0"
+          className="flex flex-row w-full h-1/3 bg-black-0"
         >
           <img src="풍경1.jpg" className="object-cover" />
           <img src="풍경2.jpg" className="object-cover overflow-hidden" />
           <img src="풍경3.jpg" className="object-cover overflow-hidden" />
         </div>
 
-        <div className="absolute p-5 bg-white rounded-t-3xl bottom-5 left-0 w-full h-2/3 mb-20 overflow-scroll">
+        <div className="absolute p-5 bg-white rounded-t-3xl left-0 bottom-0 w-full h-2/3 mb-20 overflow-scroll scrollbar-hide">
           <div
             id="latest-daegu-festival"
-            className="w-full h-10 mb-10 rounded-xl bg-clicked-menu shadow-md text-center content-center"
+            className="w-full h-10 mb-10 rounded-xl bg-clicked-menu shadow-lg text-center content-center"
           >
             <h1 className="font-LINESeedKR_Bd text-xl text-white">
               최신 대구 페스티벌
@@ -87,7 +87,7 @@ function Home() {
             {/* 맞춤 여행 코스 */}
             <div
               id="custom-fit-course-local"
-              className="flex flex-col p-3 mb-7 bg-gray-100 justify-around rounded-2xl shadow-md"
+              className="flex flex-col p-3 mb-7 bg-gray-100 justify-around rounded-2xl shadow-lg"
             >
               <h1 className="font-LINESeedKR_Bd mb-5 text-xl border-b-2 border-gray-300">
                 맞춤 여행 코스
@@ -98,7 +98,7 @@ function Home() {
             {/* 맞춤 여행 장소 */}
             <div
               id="custom-fit-course-place"
-              className="flex flex-col p-3 bg-gray-100 justify-around rounded-2xl shadow-md"
+              className="flex flex-col p-3 bg-gray-100 justify-around rounded-2xl shadow-lg"
             >
               <h1 className="font-LINESeedKR_Bd mb-5 text-xl border-b-2 border-gray-300">
                 맞춤 여행 장소

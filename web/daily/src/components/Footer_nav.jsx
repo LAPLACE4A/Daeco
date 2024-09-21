@@ -27,7 +27,7 @@ function Footer_nav(){
     }
 
     return(
-        <div id='footer_menu' className="fixed w-screen bottom-0 text-white">
+        <div id='footer_menu' className="fixed w-screen bottom-0 border-t-2 border-gray-200 text-white">
         <nav className="flex flex-row justify-around">
 
             <button onClick={navHome} className="flex flex-col w-1/4 min-w-20 h-20 bg-white text-unclick-text items-center justify-center border-r-2 border-gray-200">

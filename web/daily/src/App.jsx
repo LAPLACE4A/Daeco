@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import Feed from './components/Feed'
+import CourseMaker from './components/CourseMaker'
 import Point from './components/Point'
 import Profile from './components/Profile'
 import Login from './components/Login'
@@ -13,6 +14,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />}></Route>
 					<Route path="/feed" element={<Feed />}></Route>
+					<Route path="/feed/maker" element={<CourseMaker />}></Route>
 					<Route path="/point" element={<Point />}></Route>
 					<Route path="/profile" element={<Profile />}></Route>
 					<Route path="/login" element={<Login />}></Route>
