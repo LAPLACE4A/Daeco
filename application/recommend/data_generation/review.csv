@@ -1,0 +1,61 @@
+﻿id,DC id,stars,hashtag,contents,weather,user1_gender,user1_age,user1_mbti,user2_gender,user2_age,user2_mbti
+1,13,5,"[소확행, 친구, 힐링]",날씨랑 저희랑 너무 잘맞는 코스네요! 돈까스집 맘에 들어요,sunny_hot,female,30,ESFP,female,30,INTP
+2,20,3.5,"[친구, 데이트, 인생샷, 이색]",코스 자체는 좋은데 남자 둘이서 오기엔 좀 별로네요.. 여친이랑 오시길,sunny_cold,male,18,INTJ,male,18,ISFP
+3,2,4,"[식폭행, 데이트, 친구]",사진 찍기를 다른 걸로 바꾸니 훨 재밌네요 남성분들 두분이서 가는 분들 이렇게 하세요!,rainy_cold,male,20,INFP,male,20,ENTJ
+4,19,5,"[오운완, 소확행, 친구, 가성비]",남자둘이서 맛있게 먹고 운동까지 하니까 넘 좋네요 ㅎㅎ,cloudy_cool,male,26,INFJ,male,26,ENFP
+5,3,4,"[데이트, 친구, 이색, 인생샷]",미술관은 마음에 안들지만 색다른 경험이었어요 장마철 날씨 피하긴 좋네요,rainy_hot,male,26,INFJ,male,26,ENFP
+6,8,3.5,"[식폭행, 텅장, 낭만]",비가 와서 산책이 유쾌하진 않았지만 카페가 마음에 드네요 :),rainy_warm,female,18,ESFP,female,19,ENTP
+7,16,5,"[식폭행, 데이트, 친구, 이색, JMT, 추억]",서문야시장 너무 좋네요 또 가야징,cloudy_cold,female,18,ESFP,female,19,ENTP
+8,7,4.5,"[소확행, 힐링, 가성비]",수성구에서 만나서 잼게 놀았슴다 ㅎㅎ,sunny_cold,female,18,ESFP,female,19,ENTP
+9,15,4,"[소확행, 데이트, 인생샷, 낭만, 추억, 자연]",열음에 고양이가 넘 기여워요 ㅎㅎ 춥긴 했지만 신천도 좋았슴다,snowy_cold,female,27,ESFP,female,27,ENFP
+10,8,4,"[식폭행, 친구, 힐링]",비가 와서 산책이 별로였어여..,rainy_warm,female,33,ESFP,female,36,ENTP
+11,13,4.5,"[소확행, 데이트, 친구, 힐링]",더워서 산책이 별로긴 했지만 좋네요,sunny_hot,female,17,ISTP,female,17,ESTP
+12,8,5,"[데이트, 소확행, 힐링]",경대 엄청 이쁘고 좋네요 ㅎㅎ,sunny_cool,female,17,ISTP,female,17,ESTP
+13,2,3.5,"[식폭행, 데이트, 썸, JMT, 텅장]",돈이 너무 많이 드네요ㅠㅠ,sunny_warm,male,17,ENTP,male,19,INFJ
+14,18,4,"[식폭행, 힐링, 추억, 텅장]",다 웨이팅 있는거였지만 웨이팅하면서 친구랑 오랜만에 수다떨었네요 ㅎㅎ,cloudy_warm,female,24,ISTP,female,24,ISTJ
+15,6,5,"[식폭행, 단체, 텅장, 추억]",색다른 경험 많이 하고 갑니당 날씨에 좋네요,rainy_cold,female,25,ENTP,female,25,ISFJ
+16,5,4,"[오운완, 친구, 이색, 가성비]",운동 잘 못하지만 이제 할게요^^,sunny_cold,female,28,ENTJ,female,28,ISFJ
+17,3,5,"[데이트, 친구, 썸, 이색, 낭만, 텅장]",둘다 그림 좋아하는데 힐링하고 가요~,cloudy_cool,female,28,ENTJ,female,28,ISFJ
+18,19,3.5,"[오운완, 친구]",날씨가 좋아서 아쉽긴 하네요ㅠ,sunny_warm,female,17,ENTP,female,17,ESFJ
+19,6,4,"[JMT, 낭만, 추억, 이색]",새로운 경험 많이 해서 좋네요,sunny_cold,female,31,ENTJ,female,31,ISTP
+20,4,4,"[텅장, 친구]",옷집이 좀 어린 친구들 옷집이지만 좋네요,sunny_warm,female,32,ESTP,female,32,ISTP
+21,12,5,"[데이트, 썸, 텅장, 자연, 낭만]",좋은 추억 만들고 갑니당,rainy_warm,female,24,ISTP,female,24,ISTP
+22,20,5,"[가성비, JMT, 이색, 인생샷]",좋은 사진 건져서 좋네요,cloudy_cold,female,24,ISTP,female,24,ISTP
+23,10,3.5,"[데이트, 썸, 힐링, 낭만]",남자서 남매지는 좀..,sunny_hot,male,19,INTP,male,18,ENFJ
+24,12,2.5,[데이트],남자 둘이서 수성못은 좀..,sunny_hot,male,19,INTP,male,18,ENFJ
+25,16,3,"[식폭행, 텅장]",비가 오는 날에 이런 코스는 좀..,rainy_cool,female,26,ENFJ,female,26,ENTP
+26,10,5,"[식폭행, 데이트, 힐링]",너무 좋은 코스네요~,rainy_cool,female,26,ENFJ,female,26,ENTP
+27,20,4,"[인생샷, 힐링, 이색]",박물관 생각보다 갠찬네여,sunny_cool,female,19,ESTP,female,18,INTP
+28,14,4,"[오운완, 데이트, 힐링, 낭만, 추억, 자연]",신천 걸으니 힐링되네요,rainy_hot,female,32,INFP,female,32,ISTP
+29,20,5,"[데이트, 친구, 이색]",미술관 그림 죽이네요ㅕ,cloudy_cold,female,18,ESFP,female,18,ENTP
+30,1,4,"[데이트, JMT, 텅장]",꽤 괜찮네여,sunny_warm,male,24,ESFJ,male,24,ISFJ
+31,18,2.5,"[식폭행, 이색, 텅장]",웨이팅이 있긴 했지만 좋아요!,sunny_cool,male,18,ENTP,female,18,INFP
+32,18,4,"[식폭행, 텅장, 추억]",다 맛있네요,cloudy_cool,male,22,ISFJ,male,22,INTP
+33,16,5,"[소확행, 데이트, 낭만, 식폭행]",좋은 데이트:),cloudy_hot,male,20,ISTP,female,20,ESTP
+34,8,4,"[이색, 힐링, JMT]",비가 오긴 했지만 재밌었어요,rainy_warm,male,23,ISTP,female,23,ESFP
+35,12,3,"[힐링, 자연, 낭만]",좋네요,rainy_cold,male,23,ISTP,female,23,ESFP
+36,3,5,"[데이트, 텅장, 추억, 낭만, 이색]",더운데 시원하게 데이트 잘 하고 갑니당,sunny_hot,female,19,ESFJ,male,19,ESFP
+37,18,2.5,"[텅장, 친구]",넘 춥고 기다리기 힘드네요ㅠ,sunny_cold,female,19,ESFJ,male,19,ESFP
+38,10,3.5,"[데이트, 이색, 힐링, 텅장]",남자둘이서 오긴 좀 그렇지만 날씨는 좋네여,sunny_cool,male,19,INFJ,female,19,INTJ
+39,5,4,"[친구, 단체, 추억, 텅장]",i라서 좀 힘드네요,sunny_cold,female,24,INTJ,male,24,ISFJ
+40,10,5,"[데이트, 텅장, 낭만, 인생샷]",더웠지만 데이트 하기엔 좋네요.. ^^,cloudy_hot,female,24,INTJ,male,24,ISFJ
+41,10,3,"[데이트, 낭만, 이색]",추워서 힘드네요,snowy_cold,female,18,ENFJ,male,18,ENFJ
+42,7,5,"[친구, 가성비]",오랜만에 잼게 놀았어요 ㅎㅎ,rainy_cold,female,24,ENFP,female,21,ENTJ
+43,11,4,"[데이트, 친구, 가성비]",날씨가 넘 좋은데 안에 있는건 좀..,rainy_warm,female,15,ENFP,male,15,INFJ
+44,8,5,"[데이트, 힐링, 썸]",감사합니다! 이렇게 하고 사겨여,sunny_warm,male,21,ISFJ,female,21,ENFP
+45,17,2,"[데이트, 낭만, 인생샷, 소확행]",덥고 습해서 오래 걷기가 힘드네여..,rainy_hot,male,21,ISFJ,female,21,ENFP
+46,6,3,"[오운완, 친구, 단체]",제가 i라 데이트코스로 적절하진 않네요..,sunny_warm,male,21,ISFJ,female,21,ENFP
+47,18,4,"[식폭행, 이색, JMT, 텅장]",추워서 기다리는게 힘드네여..,cloudy_cold,male,23,ISFJ,female,23,ISTJ
+48,5,5,"[오운완, 소확행, 가성비, 낭만]",추운데 잼게 운동도 하면서 놀 수 있는 최고의 코스!,snowy_cold,female,23,ISTP,female,23,ISTJ
+49,4,5,"[텅장, 힐링, 친구]",오랜만에 옷사면서 힐링!!,sunny_cold,female,16,ENFJ,female,16,ISFJ
+50,1,2,"[식폭행, 텅장, 데이트, 썸]",남자끼리 오기엔 별로네요,sunny_cool,male,25,ENFJ,male,25,INTP
+51,18,5,"[식폭행, 소확행, 힐링, 이색, 텅장]",맛꿀마 먹어서 기부니가 좋아용,cloudy_warm,male,19,INTP,female,19,ISFJ
+52,9,4,"[오운완, 친구, 이색, 힐링, 가성비]",pc방이 맘에 안들지만 재밌었어요!,sunny_hot,female,19,ENTJ,female,19,ISFJ
+53,19,5,"[소확행, 가성비, 썸]",재밌네요 덥지도 않고,sunny_hot,male,22,INTP,female,22,INTJ
+54,7,5,"[데이트, 힐링, JMT]",카레 집이 넘넘 맛있네요 강추!!,rainy_cool,female,21,ENFJ,male,21,INFJ
+55,2,5,"[식폭행, 친구, 텅장]",넘넘 재밌고 알차게 놀았네요 ㅎㅎ,sunny_cold,female,20,ISTP,female,20,ENTJ
+56,2,3,"[힐링, 이색, 텅장]",남자 둘이서 사진 찍기라..,sunny_cool,male,24,ENTP,male,24,ENFP
+57,16,3.5,"[식폭행, 이색, 텅장, 낭만]",서브를 피방으로 바꾸니 재밌네요!,cloudy_cold,male,17,INFP,male,17,ISFP
+58,9,4,"[오운완, 이색, 추억]",비오는데 운동할 수 있어서 넘넘 좋아요!!,rainy_cold,female,15,ISFP,female,15,ENFP
+59,5,4,"[오운완, 힐링, 이색, 가성비]",비오는데 운동해서 .. 좋긴하네요,rainy_cool,female,25,ESTP,female,25,INFP
+60,17,4,"[데이트, 가성비, 힐링]",비가 와서 아숩네요..,rainy_cool,female,18,ESFJ,female,18,INTJ
