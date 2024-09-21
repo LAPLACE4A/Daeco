@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Footer_nav from "./Footer_nav";
 
 const TravelCardsHorizontal = ({ cards }) => {
@@ -16,7 +16,7 @@ const TravelCardsHorizontal = ({ cards }) => {
           />
           <div className="p-4">
             <h3 className="font-bold text-lg">{card.title}</h3>
-            <p className="text-gray-600">{card.description}</p>
+            <p className="text-gray-600">{card.content}</p>
           </div>
         </div>
       ))}
@@ -24,41 +24,42 @@ const TravelCardsHorizontal = ({ cards }) => {
   );
 };
 
-// Home 컴포넌트
 function Home() {
-  // 맞춤 여행 코스 카드 리스트
-  const localCards = [
-    {
-      title: "대구 달성군 여행",
-      description: "자연과 함께하는 행복한 여행",
-      image: "/course_local_1.jfif", // 이미지 경로 수정 필요
-    },
-    {
-      title: "대구 중구 여행",
-      description: "MZ 취향 저격 코스를 즐겨봐!",
-      image: "/course_local_2.jfif", // 이미지 경로 수정 필요
-    },
-    {
-      title: "대구 서구 여행",
-      description: "서구의 유명한 어딘가",
-      image: "/course_local_3.jfif", // 이미지 경로 추가 필요
-    },
-  ];
+  const [courseCards, setcourseCards] = useState([]);
+  const [placeCards, setPlaceCards] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // 맞춤 여행 장소 카드 리스트
-  const placeCards = [
-    {
-      title: "대구 북구 실내빙상장 어때요?",
-      description:
-        "대구 지역의 유일한 국제 규격의 스케이트장(실내스케이트장, 쇼트트랙, 피겨, 아이스하키, 컬링)",
-      image: "/course_place_1.jfif", // 이미지 경로 수정 필요
-    },
-    {
-      title: "대구 서구는 어때요?",
-      description: "서구의 유명한 어딘가",
-      image: "/course_place_2.jfif", // 이미지 경로 수정 필요
-    },
-  ];
+  const fetchTravelData = async () => {
+    try {
+      const course = await fetch("https://daeco-d6m0.onrender.com/courses");
+      const courseData = await course.json();
+      setcourseCards(courseData);
+
+      const placeResponse = await fetch(
+        "https://daeco-d6m0.onrender.com/events"
+      );
+      const placeData = await placeResponse.json();
+      setPlaceCards(placeData);
+
+      setLoading(false);
+    } catch (error) {
+      setError(`Fetch error: ${error.message}. Stack: ${error.stack}`);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchTravelData();
+  }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   return (
     <div className="w-full h-full">
@@ -92,7 +93,7 @@ function Home() {
               <h1 className="font-LINESeedKR_Bd mb-5 text-xl border-b-2 border-gray-300">
                 맞춤 여행 코스
               </h1>
-              <TravelCardsHorizontal cards={localCards} />
+              <TravelCardsHorizontal cards={courseCards} />
             </div>
 
             {/* 맞춤 여행 장소 */}
