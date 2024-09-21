@@ -4,6 +4,25 @@ require("../config/passport");
 
 const router = express.Router();
 
+// Google 로그인
+router.get(
+  "/google",
+  passport.authenticate("google", {
+    scope: ["profile", "email"],
+  })
+);
+
+// Google 콜백
+router.get(
+  "/google/callback",
+  passport.authenticate("google", {
+    failureRedirect: "/auth",
+  }),
+  (req, res) => {
+    res.redirect("/");
+  }
+);
+
 // Kakao 로그인
 router.get("/kakao", passport.authenticate("kakao"));
 
