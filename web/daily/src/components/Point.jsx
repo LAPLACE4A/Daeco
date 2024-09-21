@@ -57,7 +57,7 @@ function Point(){
                     <h1 className="font-LINESeedKR_Bd text-2xl">코스 Point</h1>
                     <div id="point-ui-points" className="flex flex-row justify-around items-center">
                         <h1 className="font-LINESeedKR_Bd text-md pr-3">{userPoints.point}</h1>
-                        <img src="/point_coin.svg" className="size-8"/>
+                        <img src={"/feed/icon/feed_point.svg"} className="size-10"/>
                     </div>
                 </div>
                 <StoreCard stores={storesList}/>

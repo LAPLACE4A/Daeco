@@ -13,7 +13,7 @@ function NotFound(){
             <h1 className="text-xl mb-10">존재하지 않는 페이지입니다.</h1>
             <button onClick={gotoHome} className="flex flex-row items-center p-3 rounded-2xl bg-slate-100">
                 <h1 className="mr-5">홈으로 돌아가기</h1>
-                <img src="/menu_home.svg"/>
+                <img src="/menu/menu_home.svg"/>
             </button>
         </div>
     )
