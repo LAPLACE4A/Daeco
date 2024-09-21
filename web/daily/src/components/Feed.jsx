@@ -46,7 +46,6 @@ function Feed(){
         {
             id: "ces_1jk",
             title: "대구 중구 골목 투어 : 근대 문화 골목을 여행하다.",
-            content:"뭐시기 뭐시기",
             hashtag:["#1", "#2"],
             profile_picture:"/user_profile_1.jpg",
             content:"동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세",
@@ -55,7 +54,6 @@ function Feed(){
         {
             id: "ces_1jk",
             title: "대구 중구 골목 투어 : 근대 문화 골목을 여행하다.",
-            content:"뭐시기 뭐시기",
             hashtag:["#1", "#2"],
             profile_picture:"/user_profile_2.jpg",
             content:"동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세",
@@ -64,7 +62,6 @@ function Feed(){
         {
             id: "ces_1jk",
             title: "대구 중구 골목 투어 : 근대 문화 골목을 여행하다.",
-            content:"뭐시기 뭐시기",
             hashtag:["#1", "#2"],
             profile_picture:"/user_profile_1.jpg",
             content:"동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세",
