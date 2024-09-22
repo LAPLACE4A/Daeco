@@ -27,29 +27,29 @@ const CourseCards = ({ courses, showDelete }) => { //상호명, 지도, content 
 
 function CourseMaker(){
 
-    // const courseCards = [
-    //     {
-    //         name: "1번 템플릿",
-    //         content: "1번템플릿임",
-    //         url:"template_1"
-    //     },
-    //     {
-    //         name: "2번 템플릿",
-    //         content: "2번템플릿임"
-    //     },
-    //     {
-    //         name: "3번 템플릿",
-    //         content: "3번템플릿임"
-    //     },
-    //     {
-    //         name: "4번 템플릿",
-    //         content: "4번템플릿임"
-    //     },
-    //     {
-    //         name: "5번 템플릿",
-    //         content: "5번템플릿임5번템플릿임5번템플릿임"
-    //     },
-    // ]
+    const courseCards = [
+        {
+            name: "1번 템플릿",
+            content: "1번템플릿임",
+            url:"template_1"
+        },
+        {
+            name: "2번 템플릿",
+            content: "2번템플릿임"
+        },
+        {
+            name: "3번 템플릿",
+            content: "3번템플릿임"
+        },
+        {
+            name: "4번 템플릿",
+            content: "4번템플릿임"
+        },
+        {
+            name: "5번 템플릿",
+            content: "5번템플릿임5번템플릿임5번템플릿임"
+        },
+    ]
 
     const [showDelete, setShowDelete] = useState("false")
 
@@ -80,33 +80,33 @@ function CourseMaker(){
         alert(title)
     }
 
-    const [courseCards, setcourseCards] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    // const [courseCards, setcourseCards] = useState([]);
+    // const [loading, setLoading] = useState(true);
+    // const [error, setError] = useState(null);
 
-    const fetchTravelData = async () => {
-        try {
-        const course = await fetch("https://daeco-d6m0.onrender.com/course/"+feedCard.course_id);
-        const courseData = await course.json();
-        setcourseCards(courseData);
+    // const fetchTravelData = async () => {
+    //     try {
+    //     const course = await fetch("https://daeco-d6m0.onrender.com/course/"+feedCard.course_id);
+    //     const courseData = await course.json();
+    //     setcourseCards(courseData);
 
-        setLoading(false);
-        } catch (error) {
-        setError(`Fetch error: ${error.message}. Stack: ${error.stack}`);
-        setLoading(false);
-        }
-    };
+    //     setLoading(false);
+    //     } catch (error) {
+    //     setError(`Fetch error: ${error.message}. Stack: ${error.stack}`);
+    //     setLoading(false);
+    //     }
+    // };
 
-    useEffect(() => {
-        fetchTravelData();
-      }, []);    
+    // useEffect(() => {
+    //     fetchTravelData();
+    //   }, []);    
 
-    if (loading) {
-        return <Loding/>
-    }
-    if (error) {
-        return <p>{error}</p>;
-    }
+    // if (loading) {
+    //     return <Loding/>
+    // }
+    // if (error) {
+    //     return <p>{error}</p>;
+    // }
 
     return(
         <div className="w-full h-full">

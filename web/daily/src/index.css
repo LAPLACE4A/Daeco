@@ -5,19 +5,19 @@
 @font-face{
     font-family: "LINESeedKR-Bd";
     font-weight: normal;
-    src: url("./fonts/LINESeedKR-Bd.ttf") format("truetype");
+    src: url("/fonts/LINESeedKR-Bd.ttf") format("truetype");
 }
 
 @font-face{
     font-family: "LINESeedKR-Rg";
     font-weight: normal;
-    src: url("./fonts/LINESeedKR-Rg.ttf") format("truetype");
+    src: url("/fonts/LINESeedKR-Rg.ttf") format("truetype");
 }
 
 @font-face{
     font-family: "LINESeedKR-Th";
     font-weight: normal;
-    src: url("./fonts/LINESeedKR-Th.ttf") format("truetype");
+    src: url("/fonts/LINESeedKR-Th.ttf") format("truetype");
 }
 
 html, body, #root{
