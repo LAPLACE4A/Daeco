@@ -74,7 +74,6 @@ exports.getRecommendCourses = async (req, res) => {
         placeID: course ? course.placeID : [],
         timeList: course ? course.timeList : [],
         concept: course ? course.concept : "Unknown",
-        content: course ? course.content : "No content available",
         rating: rating,
       };
     });
@@ -90,29 +89,36 @@ exports.getRecommendCourses = async (req, res) => {
 };
 
 // 코스 생성하기 (사용자 ID 필요)
+// main 요소가 변했으면 새로운 course로 db에 저장
+// main 요소가 변하지 않았으면 새로운 course로 db에 저장하되, course의 userid를 기존 course의 userid에 append 설정
 exports.createCourse = async (req, res) => {
-  const { title, placeList, placeID, timeList, concept, content, userId } =
-    req.body;
+  const { title, placeList, placeID, timeList, concept, userId } = req.body;
 
   try {
-    const course = new Course({
+    const newCourse = new Course({
       title,
       placeList,
       placeID,
       timeList,
       concept,
-      content,
       userId,
     });
-    await course.save();
-    res.status(201).json(course);
+
+    await newCourse.save();
+
+    res.status(201).json({
+      message: "New course created",
+      course: newCourse,
+    });
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
 };
 
-// 코스 수정하기(placeID의 main인 요소인 index의 placeList가 변하지 않았다면 수정 불가)
+// 코스 수정하기
 exports.updateCourse = async (req, res) => {
+  const { title, placeList, placeID, timeList, concept, userId } = req.body;
+
   try {
     const course = await Course.findById(req.params.id);
 
@@ -120,32 +126,20 @@ exports.updateCourse = async (req, res) => {
       return res.status(404).json({ message: "Course not found" });
     }
 
-    // 'main'인 placeID의 인덱스들 구하기
-    const mainIndices = course.placeID
-      .map((id, index) => (id === "main" ? index : -1))
-      .filter((index) => index !== -1);
-
-    // 기존 course의 placeList와 새로 전달된 placeList의 'main' 인덱스 값 비교
-    const isMainUnchanged = mainIndices.every(
-      (index) => course.placeList[index] === req.body.placeList[index]
-    );
-
-    if (isMainUnchanged) {
-      return res.status(400).json({
-        message: "Main place in placeList has not changed, update not allowed.",
-      });
+    if (!course.userId.includes(userId)) {
+      return res
+        .status(403)
+        .json({ message: "You are not allowed to update this course" });
     }
 
-    course.title = req.body.title;
-    course.placeList = req.body.placeList;
-    course.placeID = req.body.placeID;
-    course.timeList = req.body.timeList;
-    course.concept = req.body.concept;
-    course.content = req.body.content;
-
+    course.title = title || course.title;
+    course.placeList = placeList || course.placeList;
+    course.placeID = placeID || course.placeID;
+    course.timeList = timeList || course.timeList;
+    course.concept = concept || course.concept;
     await course.save();
 
-    res.json(course);
+    res.status(200).json(course);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

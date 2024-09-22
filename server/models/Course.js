@@ -8,7 +8,7 @@ const CourseSchema = new mongoose.Schema(
       default: uuidv4, // _id 필드를 uuidv4로 설정
     },
     userId: {
-      type: String,
+      type: [],
       ref: "User",
       required: true,
     },
@@ -34,10 +34,6 @@ const CourseSchema = new mongoose.Schema(
     concept: {
       type: String,
       default: "",
-      required: true,
-    },
-    content: {
-      type: String,
       required: true,
     },
   },

@@ -9,6 +9,8 @@ const {
   updateCourse,
   deleteCourse,
 } = require("../controllers/courseController");
+const checkMain = require("../middleware/checkMainChanged");
+const appendUser = require("../middleware/appendUser");
 
 // 모든 course 가져오기
 router.get("/", getAllCourses);
@@ -24,6 +26,9 @@ router.get("/user/:userId", getCoursesByUser);
 
 // course 생성하기
 router.post("/", createCourse);
+
+// 기존 course에서 생성하기
+router.post("/:id", checkMain, appendUser, createCourse);
 
 // course 수정하기
 router.put("/:id", updateCourse);
