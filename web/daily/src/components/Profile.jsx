@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
-import Footer_nav from "./Footer_nav"
-=======
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer_nav from "./Footer_nav";
 import Loding from "./Loding";
->>>>>>> c8aafaf21416e0ac5e49d290070760a89809e5be
+
 
 function Profile() {
   const navigate = useNavigate();
@@ -23,11 +18,6 @@ function Profile() {
     navigate("/");
   };
 
-<<<<<<< HEAD
-    const gotoChangeUserProfile = () =>{
-        navigate("/profile/change")
-    }
-=======
   const gotoChangeUserProfile = () => {
     navigate("/profile/change");
   };
@@ -35,7 +25,6 @@ function Profile() {
   //   const gotoLogin = () => {
   //     navigate("/login");
   //   };
->>>>>>> c8aafaf21416e0ac5e49d290070760a89809e5be
 
   const gotoLogOut = () => {
     navigate("/auth/logout");
