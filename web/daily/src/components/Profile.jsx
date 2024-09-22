@@ -21,8 +21,8 @@ function Profile(){
         navigate("/profile/change")
     }
 
-    const gotoLoginLogout = () =>{
-        navigate("/logout")
+    const gotoLogin = () =>{
+        navigate("/login")
     }
 
     const [users, setUsers] = useState([]);
@@ -78,7 +78,7 @@ function Profile(){
                     <div id='profil-setting-item' className="w-full mb-3 p-5 border-black bg-white rounded-2xl shadow-lg">
                         <h1 className="font-LINESeedKR_Bd text-md mb-5 border-b-2 border-gray-300">개인정보</h1>
                         <button onClick={gotoChangeUserProfile} className="w-full text-left m-auto p-3">내 정보 변경</button>
-                        <button onClick={gotoLoginLogout} className="w-full text-left m-auto p-3">로그아웃</button>
+                        <button onClick={gotoLogin} className="w-full text-left m-auto p-3">로그인</button>
                     </div>
                 </div>
 

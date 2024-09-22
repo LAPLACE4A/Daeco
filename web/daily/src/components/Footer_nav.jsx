@@ -23,7 +23,7 @@ function Footer_nav(){
         navigate("/point")
     }
     const navProfile = () =>{
-        navigate("/login")
+        navigate("/profile")
     }
 
     return(
