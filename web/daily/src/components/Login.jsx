@@ -1,7 +1,7 @@
 function Login(){
 
     const handleLoginClick = () => {
-        fetch('/auth/status', {
+        fetch('https://daeco-d6m0.onrender.com/auth/status', {
             method: 'GET',
             credentials: 'include',
         })
