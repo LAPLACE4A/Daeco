@@ -4,6 +4,7 @@ const {
   getAllCourses,
   getCourseById,
   getCoursesByUser,
+  getRecommendCourses,
   createCourse,
   updateCourse,
   deleteCourse,
@@ -14,6 +15,9 @@ router.get("/", getAllCourses);
 
 // 특정 ID의 course 가져오기
 router.get("/:id", getCourseById);
+
+// 추천 course 가져오기
+router.get("/recommend", getRecommendCourses);
 
 // 특정 user의 course 가져오기
 router.get("/user/:userId", getCoursesByUser);

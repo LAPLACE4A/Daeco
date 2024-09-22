@@ -22,8 +22,8 @@ const CourseSchema = new mongoose.Schema(
       required: true,
     },
     placeID: {
-      type: String,
-      default: "",
+      type: Array,
+      default: [],
       required: true,
     },
     timeList: {
