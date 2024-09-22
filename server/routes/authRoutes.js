@@ -28,7 +28,7 @@ router.get(
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    failureRedirect: "https://daeco.vercel.app/auth",
+    failureRedirect: "https://daeco.vercel.app/login",
   }),
   (req, res) => {
     if (req.user.isNewUser) {
@@ -51,7 +51,7 @@ router.get(
 router.get(
   "/kakao/callback",
   passport.authenticate("kakao", {
-    failureRedirect: "https://daeco.vercel.app/auth",
+    failureRedirect: "https://daeco.vercel.app/login",
   }),
   (req, res) => {
     if (req.user.isNewUser) {
@@ -72,7 +72,7 @@ router.get(
 router.get(
   "/naver/callback",
   passport.authenticate("naver", {
-    failureRedirect: "https://daeco.vercel.app/auth",
+    failureRedirect: "https://daeco.vercel.app/login",
   }),
   (req, res) => {
     if (req.user.isNewUser) {
