@@ -18,6 +18,7 @@ dotenv.config();
 app.use(
   cors({
     origin: ["http://localhost:5173", "https://daeco.vercel.app"],
+    credentials: true,
   })
 );
 
@@ -27,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
-    cookie: { maxAge: 60000, secure: true },
+    cookie: { maxAge: 60000, secure: true, sameSite: "none" },
     resave: false,
     saveUninitialized: true,
   })
