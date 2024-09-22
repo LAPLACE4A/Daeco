@@ -3,6 +3,8 @@ import KakaoMap from "./KakaoMap"
 import Footer_nav from "./Footer_nav"
 import Loding from "./Loding";
 
+const { kakao } = window
+
 const StoreCard = ({ stores }) => { //상호명, 지도, content 컴포넌트 추가
     return (
         <div id="point-uses" className="flex flex-wrap w-full h-screen p-10 overflow-scroll scrollbar-hide justify-center mb-12">
