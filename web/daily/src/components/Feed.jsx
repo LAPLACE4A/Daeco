@@ -10,37 +10,28 @@ const FeedCard = ({ cards, openRatesModal, gotoCourseMaker }) => {
         <div id="feed-recommend" className="w-full mb-20 bg-white overflow-x-scroll scrollbar-hide">
             {cards.map((card, index)=>(
                     <div id="feed-container" key={index} className="flex flex-col w-full h-auto p-7 bg-white justify-around border-b-2 border-gray-300">
-                        <div id="user-info" className="flex flex-row justify-start">
-                            <img src={card.profile_picture} className="rounded-full size-10 mr-5"/>
-                            <div id="user-info-text" className="flex flex-col">
-                                <h1 className="font-LINESeedKR_Bd text-md">{card.id}</h1>
-                                <p className="text-sm">대구중구_근대문화골목</p>
-                            </div>
-                        </div>
-
-                        <button onClick={() => gotoCourseMaker(card)}>
-                            <img id="user-pic" src={card.profile_picture} className="w-full h-auto rounded-2xl my-2"/> {/* src 바꿔야함 */}
-                        </button>
-                        
-                        <div id="user-context-container" className="flex flex-col w-full">
-                            <div id="user-context-header" className="flex flex-row justify-between items-center">
-                                <div id="user-context-icons" className="items-center">
-                                    <h1 className="font-LINESeedKR_Bd text-md">{card.stars}</h1>
-                                        <button>
-                                            {Boolean(card.isGivedRate) ? <img src="/feed/icon/feed_filled_star.svg" onClick={openRatesModal} className="size-6 mr-3"/> : <img src="/feed/icon/feed_unfilled_star.svg" onClick={openRatesModal} className="size-6 mr-3"/>}
-                                        </button>
-                                        {/*  공유기능
-                                        <button>
-                                            <img src="/feed/icon/feed_share.svg" className="size-6"/>
-                                        </button>
-                                        */}
+                        <button onClick={() => gotoCourseMaker(card)} className="">
+                            <div id="user-info" className="flex flex-row">
+                                <img src={card.profile_picture} className="rounded-full size-10 mr-5"/>
+                                <div id="user-info-text" className="flex flex-col">
+                                    <h1 className="font-LINESeedKR_Bd text-md">{card.user_id}</h1>
+                                    <p className="text-sm">{card._id}</p>
                                 </div>
-                                <h1 id="user-context-tag" className="font-LINESeedKR_Th text-md">{card.hashtag}</h1>
                             </div>
-                            
-                                <h1 id="user-context-title" className="text-md">{card.id} | {card.course_id}</h1>
-                                <h1 id="user-context-content" className="text-sm">{card.content}</h1>
-                            </div>
+                                <img id="user-pic" src={card.profile_picture} className="w-full h-auto rounded-2xl my-2"/> {/* src 바꿔야함 */}
+                            <div id="user-context-container" className="flex flex-col w-full">
+                                <div id="user-context-header" className="flex flex-row justify-between items-center">
+                                    <div id="user-context-icons" className="items-center">
+                                        <button className="flex flex-row ">
+                                            <h1 className="font-LINESeedKR_Bd text-md pr-3">{card.stars}</h1>
+                                            <img src="/feed/icon/feed_filled_star.svg" onClick={openRatesModal} className="size-6 mr-3"/>
+                                        </button>
+                                    </div>
+                                    <h1 id="user-context-tag" className="font-LINESeedKR_Rg text-md text-gray-500">{card.hashtag}</h1>
+                                </div>
+                                    <h1 id="user-context-content" className="text-md pt-5">{card.content}</h1>
+                                </div>
+                            </button>
                     </div>
             ))}
         </div>
