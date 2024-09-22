@@ -7,12 +7,11 @@ function Profile(){
 
     const navigate = useNavigate()
 
-    {/*
     const userProfile = {
         id:"김도붕",
         profile_picture:"/menu/menu_profile.svg"
     }
-        */}
+
     const gotoRatedFeedList = () =>{
         navigate("/")
     }
@@ -29,46 +28,15 @@ function Profile(){
         navigate("/auth/logout")
     }
 
-    const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    const fetchTravelData = async () => {
-        try {
-          const usersResponse = await fetch(
-            "https://daeco-d6m0.onrender.com/users"
-          );
-          const usersData = await usersResponse.json();
-          setUsers(usersData);
-    
-          setLoading(false);
-        } catch (error) {
-          setError(`Fetch error: ${error.message}. Stack: ${error.stack}`);
-          setLoading(false);
-        }
-      };
-  
-      useEffect(() => {
-          fetchTravelData();
-        }, []);
-      
-        if (loading) {
-          return <Loding/>
-        }
-      
-        if (error) {
-          return <p>{error}</p>;
-        }
-
     return(
         <div className="flex flex-col w-full h-full">
             <div id='profile-bg' className="w-full h-1/3 bg-clicked-menu">
                 <div id='profile-user' className="flex flex-col w-auto m-5 p-5 bg-white shadow-2xl rounded-xl">
                     <div id='user_image' className="m-auto p-5">
-                        <img src={users.profile_picture} className="size-24"/>
+                        <img src={userProfile.profile_picture} className="size-24"/>
                     </div>
                     <div id='user_simple_info' className="flex flex-row justify-around">
-                        <h1 className="font-LINESeedKR_Bd text-2xl">" {users.id} "</h1>
+                        <h1 className="font-LINESeedKR_Bd text-2xl">" {userProfile.id} "</h1>
                     </div>
                 </div>
             </div>
