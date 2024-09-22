@@ -3,8 +3,6 @@ import KakaoMap from "./KakaoMap"
 import Footer_nav from "./Footer_nav"
 import Loding from "./Loding";
 
-const { kakao } = window
-
 const StoreCard = ({ stores }) => { //상호명, 지도, content 컴포넌트 추가
     return (
         <div id="point-uses" className="flex flex-wrap w-full h-screen p-10 overflow-scroll scrollbar-hide justify-center mb-12">
@@ -23,19 +21,38 @@ const StoreCard = ({ stores }) => { //상호명, 지도, content 컴포넌트 �
 
 function Point(){
 
+    {/*
+    const userPoints = {
+            id:"김도붕",
+            point:30000
+        }
+
     const storesList = [
         {
-            position: kakao.maps.LatLng(35.863234, 128.595981),
+            name:"도갈통",
+            position:"대구 북구 산격로8길 34 1층",
+            content:"(초심 잃어버림)"
         },
 
         {
-            position: kakao.maps.LatLng(35.863270, 128.625900),
+            name:"우리집",
+            position:"대구 달서구 선원남로 77",
+            content:"(집인데 집가고싶다)"
         },
 
         {
-            position: kakao.maps.LatLng(35.808487, 128.735820),
+            name:"반월당",
+            position:"대구 중구 덕산동",
+            content:"(사람 개많음)"
+        },
+
+        {
+            name:"도갈통v2(우리분식)",
+            position:"대구 북구 대현로19길 27",
+            content:"(오삼불고기 개맛도리)"
         },
     ]
+    */}
 
     const [shopsCards, setstoreCards] = useState([]);
     const [users, setUsers] = useState([]);
