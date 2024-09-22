@@ -21,8 +21,7 @@
 
 ## 시연 영상
 
-- [Youtube 링크](#)
-- [Github Repository 링크](#) (선택 사항)
+- [Youtube 링크](https://youtu.be/IfATpCWNdC4)
 
 ## 서비스 소개
 
