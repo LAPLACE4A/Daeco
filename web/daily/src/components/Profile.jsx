@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Footer_nav from "./Footer_nav";
 import Loding from "./Loding";
 
+
 function Profile() {
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(null); // 로그인 여부 상태

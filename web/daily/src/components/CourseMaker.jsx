@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Footer_nav from "./Footer_nav";
 import Loding from "./Loding";
 
@@ -7,17 +7,15 @@ const CourseCards = ({ courses, showDelete }) => { //상호명, 지도, content 
     return (
         <div id="maker-ui-fomrs-place_list" className="flex flex-wrap w-full h-auto bg-gray-100 border-t-0 border-l-0 border-r-0 border-b-4 border-gray-400 shadow-lg rounded-2xl rounded-b-none justify-between">
             {courses.map((course, index)=>(
-                <div key={index} className="flex flex-col max-w-[250px] max-h-[300px] bg-gray-50 rounded-2xl shadow-lg flex-shrink-0 mx-auto my-10">
+                <div key={index} className="flex flex-col max-w-[250px] min-w-[250px] max-h-[300px] bg-gray-50 rounded-2xl shadow-lg flex-shrink-0 mx-auto my-10">
                     <div className="relative w-full h-full bg-yellow-200">
-                        <div className={`absolute w-7 h-7 -top-3 -right-3 bg-red-400 rounded-full ${showDelete ? 'block' : 'hidden'}`}>
-                            <button>삭제</button>
-                        </div>
+                        <div className={`absolute w-7 h-7 -top-3 -right-3 bg-red-400 rounded-full ${showDelete ? 'block' : 'hidden'}`}/>
                     </div>
                     <div className="">
                         <h3 className="font-bold text-lg text-center py-5">{index+1}번 장소</h3>
                     </div>
                     <div className="w-full h-full bg-gray-300 rounded-b-2xl">
-                        <p className="text-gray-600 p-10">{course.content}</p>
+                        <p className="text-gray-600 p-10">{course.name}</p>
                     </div>
                 </div>
             ))}
@@ -29,39 +27,59 @@ function CourseMaker(){
 
     const courseCards = [
         {
-            name: "1번 템플릿",
+            name: "봉자막창",
             content: "1번템플릿임",
-            url:"template_1"
         },
         {
-            name: "2번 템플릿",
+            name: "아리츠",
             content: "2번템플릿임"
         },
         {
-            name: "3번 템플릿",
+            name: "르폴뒤",
             content: "3번템플릿임"
         },
         {
-            name: "4번 템플릿",
+            name: "빠다를뺑프랑스",
             content: "4번템플릿임"
         },
         {
-            name: "5번 템플릿",
+            name: "소명커피바",
+            content: "5번템플릿임5번템플릿임5번템플릿임"
+        },
+        {
+            name: "딥커피로스터스",
+            content: "5번템플릿임5번템플릿임5번템플릿임"
+        },
+        {
+            name: "달서별빛캠핑장",
+            content: "5번템플릿임5번템플릿임5번템플릿임"
+        },
+        {
+            name: "대구미술관",
+            content: "5번템플릿임5번템플릿임5번템플릿임"
+        },
+        {
+            name: "고미텐",
+            content: "5번템플릿임5번템플릿임5번템플릿임"
+        },
+        {
+            name: "나비다드 481-1",
             content: "5번템플릿임5번템플릿임5번템플릿임"
         },
     ]
 
     const [showDelete, setShowDelete] = useState("false")
+    const navigate = useNavigate();
 
     const toggleDelete = () => {
         setShowDelete(!showDelete)
     };
 
-    const [title, setTitle] = useState("");
+    const [title, setTitle] = useState("코스 1");
     const [place_list, setPlace_list] = useState([]);
     const [time_list, setTime_list] = useState([]);
     const [weather, setWeather] = useState("");
-    const [concept, setConcept] = useState("");
+    const [concept, setConcept] = useState("indoor");
     
     const weather_list = ["sunny-hot", "sunny-warm", "sunny-cool", "sunny-cold", "cloudy-hot", "cloudy-warm", "cloudy-cool", "cloudy-cold", "rainy-hot", "rainy-warm", "rainy-cool", "rainy-cold", "snowy-hot", "snowy-warm", "snowy-cool", "snowy-cold"]
     const concept_list = ["activity", "indoor", "experience", "healing", "culture", "food", "photo", "shopping"]
@@ -70,14 +88,7 @@ function CourseMaker(){
     const feedCard = location.state?.feedCards || [];
 
     const PostCourseMaker = () =>{
-        //document.getElementById('maker-ui-fomrs-time_start') + document.getElementById('maker-ui-fomrs-time_end')
-        setTitle(document.getElementById('maker-ui-fomrs-title').value)
-        //setPlace_list(document.getElementById('maker-ui-fomrs-title').value)
-        //setTime_list(document.getElementById('maker-ui-fomrs-time').value)
-        setWeather(document.getElementById('maker-ui-fomrs-weather-select').value + "-" + document.getElementById('maker-ui-fomrs-temper-select').value)
-        setConcept(document.getElementById('maker-ui-fomrs-concept').value)
-
-        alert(title)
+        navigate("/feed")
     }
 
     // const [courseCards, setcourseCards] = useState([]);

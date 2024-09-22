@@ -25,7 +25,7 @@ function UserInfomation({isUserInfoExist}){
         <>
             <div id="maker-container" className="w-full h-screen p-5 bg-white">
                 <div id="ui-header" className="flex flex-row items-center p-5 pb-10">
-                    <img src="/logo/logo.jpg" className="size-16 rounded-full mr-10"/>
+                    <img src="/logo/logo.svg" className="size-16 rounded-full mr-10"/>
                     <div id="ui-header-text" className="flex flex-col">
                         <h1 className="font-LINESeedKR_Bd text-2xl">Daeco</h1>
                         <h1 className="text-lg">사용자님의 기본 정보를 입력해주세요.</h1>
