@@ -9,8 +9,8 @@ const {
   updateCourse,
   deleteCourse,
 } = require("../controllers/courseController");
-const checkMain = require("../middleware/checkMainChanged");
-const appendUser = require("../middleware/appendUser");
+const checkMain = require("../middlewares/checkMain");
+const appendUser = require("../middlewares/appendUser");
 
 // 모든 course 가져오기
 router.get("/", getAllCourses);
