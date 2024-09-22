@@ -5,11 +5,11 @@ import Loding from "./Loding";
 
 const StoreCard = ({ stores }) => { //상호명, 지도, content 컴포넌트 추가
     return (
-        <div id="point-uses" className="flex flex-wrap w-full h-screen p-10 overflow-scroll scrollbar-hide justify-center">
+        <div id="point-uses" className="flex flex-wrap w-full h-screen p-10 overflow-scroll scrollbar-hide justify-center mb-12">
             {stores.map((store, index)=>(
                 <div key={index} className="min-w-[250px] max-w-[250px] min-h-[300px] max-h-[300px] bg-white rounded-lg shadow-lg flex-shrink-0 m-10">
                     <KakaoMap addr={store.position} index_id={"store-map"+index}/>
-                    <div className="p-4">
+                    <div className="p-4 overflow-hidden">
                         <h3 className="font-bold text-lg">{store.name}</h3>
                         <p className="text-gray-600">{store.content}</p>
                     </div>
@@ -97,7 +97,7 @@ function Point(){
                 <div id="point-ui" className="flex flex-row justify-between p-5 bg-white shadow-lg items-center">
                     <h1 className="font-LINESeedKR_Bd text-2xl">코스 Point</h1>
                     <div id="point-ui-points" className="flex flex-row justify-around items-center">
-                        <h1 className="font-LINESeedKR_Bd text-md pr-3">{users.point}</h1>
+                        <h1 className="font-LINESeedKR_Bd text-md pr-3">{users[0].point}</h1>
                         <img src={"/feed/icon/feed_point.svg"} className="size-10"/>
                     </div>
                 </div>

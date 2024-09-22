@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Footer_nav from "./Footer_nav";
 import Loding from "./Loding";
-import event from '../../../../application/event.json'
+import event from '../../../../application/data_generation/행사/event.json'
 
 const TravelCardsHorizontal = ({ cards }) => {
   return (
@@ -18,7 +18,7 @@ const TravelCardsHorizontal = ({ cards }) => {
           />
           <div className="p-4">
             <h3 className="font-bold text-lg">{card.title}</h3>
-            <p className="text-gray-600">{card.content}</p>
+            <p className="text-gray-600">{card.description}</p>
           </div>
         </div>
       ))}
@@ -27,47 +27,78 @@ const TravelCardsHorizontal = ({ cards }) => {
 };
 
 function Home() {
+
+  const courseCards = [
+    {
+      title: "대구 달성군 여행",
+      description: "자연과 함께하는 행복한 여행",
+      image: "/home/course_local_1.jfif",
+    },
+    {
+      title: "대구 중구 여행",
+      description: "MZ 취향 저격 코스를 즐겨봐!",
+      image: "/home/course_local_2.jfif",
+    },
+    {
+      title: "대구 서구 여행",
+      description: "서구의 유명한 어딘가",
+      image: "/home/course_local_3.jfif",
+    },
+  ];
+
+  const placeCards = [
+    {
+      title: "대구 북구 실내빙상장 어때요?",
+      description:
+        "대구 지역의 유일한 국제 규격의 스케이트장(실내스케이트장, 쇼트트랙, 피겨, 아이스하키, 컬링)",
+      image: "/home/course_place_1.jfif",
+    },
+    {
+      title: "대구 서구는 어때요?",
+      description: "서구의 유명한 어딘가",
+      image: "/home/course_place_2.jfif",
+    },
+  ];
   
-  const festivalName = event.name.toString()
-  const festivalPeriod = event.period[0].toString() + " ~ " + event.period[1].toString()
-  //
-  const [courseCards, setcourseCards] = useState([]);
-  const [placeCards, setPlaceCards] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const festivalName = event[0].name
+  const festivalPeriod = event[0].period[0] + " ~ " + event[0].period[1]
 
-  const fetchTravelData = async () => {
-    try {
-      const course = await fetch("https://daeco-d6m0.onrender.com/courses");
-      const courseData = await course.json();
-      setcourseCards(courseData);
+  // const [courseCards, setcourseCards] = useState([]);
+  // const [placeCards, setPlaceCards] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
-      const placeResponse = await fetch(
-        "https://daeco-d6m0.onrender.com/events"
-      );
-      const placeData = await placeResponse.json();
-      setPlaceCards(placeData);
+  // const fetchTravelData = async () => {
+  //   try {
+  //     const course = await fetch("https://daeco-d6m0.onrender.com/courses");
+  //     const courseData = await course.json();
+  //     setcourseCards(courseData);
 
-      setLoading(false);
-    } catch (error) {
-      setError(`Fetch error: ${error.message}. Stack: ${error.stack}`);
-      setLoading(false);
-    }
-  };
+  //     const placeResponse = await fetch(
+  //       "https://daeco-d6m0.onrender.com/events"
+  //     );
+  //     const placeData = await placeResponse.json();
+  //     setPlaceCards(placeData);
 
-  useEffect(() => {
-    fetchTravelData();
-  }, []);
+  //     setLoading(false);
+  //   } catch (error) {
+  //     setError(`Fetch error: ${error.message}. Stack: ${error.stack}`);
+  //     setLoading(false);
+  //   }
+  // };
 
-  if (loading) {
-    return <Loding/>
-  }
+  // useEffect(() => {
+  //   fetchTravelData();
+  // }, []);
 
-  if (error) {
-    return <p>{error}</p>;
-  }
+  // if (loading) {
+  //   return <Loding/>
+  // }
 
-  //
+  // if (error) {
+  //   return <p>{error}</p>;
+  // }
+
   return (
     <div className="w-full h-full">
       <div id="home_contents" className="w-full h-full">
@@ -75,9 +106,7 @@ function Home() {
           id="img-scroll-banner"
           className="flex flex-row w-full h-1/3 bg-black-0"
         >
-          <img src={"/home/풍경1.jpg"} className="object-cover" />
-          <img src={"/home/풍경2.jpg"} className="object-cover overflow-hidden" />
-          <img src={"/home/풍경3.jpg"} className="object-cover overflow-hidden" />
+          <img src={"/home/메인화면_풍경.jpg"} className="object-cover" />
         </div>
 
         <div className="absolute p-5 bg-white rounded-t-3xl left-0 bottom-0 w-full h-2/3 mb-20 overflow-scroll scrollbar-hide">

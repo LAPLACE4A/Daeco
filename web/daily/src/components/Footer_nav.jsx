@@ -4,16 +4,16 @@ function Footer_nav(){
 
     const navigate = useNavigate();
 
-    const navHome = () =>{
-        navigate("/")
-    }
-    const navFeed = () =>{
-        navigate("/feed")
-    }
-    const navPoint = () =>{
-        navigate("/point")
-    }
-    const navProfile = () => {
+    {/* 색 바꾸기 아직 생각중 #2C98F0
+        if (nowLocation.pathname == pos){
+            button.style.filter = 'invert(65%) sepia(58%) saturate(5599%) hue-rotate(184deg) brightness(99%) contrast(90%)'
+        }
+        else{
+            button.style.filter = ''
+        }
+    */}
+
+    const handleLoginClick = ({navigate, routeUrl}) => {
         fetch('https://daeco-d6m0.onrender.com/auth/status', {
             method: 'GET',
             credentials: 'include', 
@@ -26,16 +26,28 @@ function Footer_nav(){
         })
         .then((data) => {
             if (data.isAuthenticated) {
-                alert("hi")
                 console.log('Logged in as:', data.user);
-                navigate("/profile")
+                navigate(routeUrl)
             } else {
                 window.location.href = '/login'; // 로그인 페이지로 리디렉션
             }
         })
         .catch((error) => {
             console.error('There was a problem with the fetch operation:', error);
-        })
+        });
+    };
+
+    const navHome = () =>{
+        navigate("/")
+    }
+    const navFeed = () =>{
+        navigate("/feed")
+    }
+    const navPoint = () =>{
+        navigate("/point")
+    }
+    const navProfile = () =>{
+        handleLoginClick(navigate, "/profile")
     }
 
     return(
