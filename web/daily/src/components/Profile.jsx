@@ -25,6 +25,10 @@ function Profile(){
         navigate("/login")
     }
 
+    const gotoLogOut = () =>{
+        navigate("/auth/logout")
+    }
+
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -72,13 +76,14 @@ function Profile(){
             <div id='profile-settings' className="flex flex-col w-full h-full px-3 pt-5 pb-2 mt-5 mb-20 bg-white overflow-scroll items-end scrollbar-hide">
                     <div id='profil-setting-item' className="w-full mb-3 p-5 border-black bg-white rounded-2xl shadow-lg">
                         <h1 className="font-LINESeedKR_Bd text-md mb-5 border-b-2 border-gray-300">내 활동</h1>
-                        <button onClick={gotoRatedFeedList} className="w-full text-left m-auto p-3 ">별점을 준 피드</button>
+                        <button onClick={gotoRatedFeedList} className="w-full text-left m-auto p-3 ">내가 만든 피드?</button>
                     </div>
 
                     <div id='profil-setting-item' className="w-full mb-3 p-5 border-black bg-white rounded-2xl shadow-lg">
                         <h1 className="font-LINESeedKR_Bd text-md mb-5 border-b-2 border-gray-300">개인정보</h1>
                         <button onClick={gotoChangeUserProfile} className="w-full text-left m-auto p-3">내 정보 변경</button>
                         <button onClick={gotoLogin} className="w-full text-left m-auto p-3">로그인</button>
+                        <button onClick={gotoLogOut} className="w-full text-left m-auto p-3">로그아웃</button>
                     </div>
                 </div>
 

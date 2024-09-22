@@ -76,8 +76,6 @@ function Home() {
           className="flex flex-row w-full h-1/3 bg-black-0"
         >
           <img src={"/home/풍경1.jpg"} className="object-cover" />
-          <img src={"/home/풍경2.jpg"} className="object-cover overflow-hidden" />
-          <img src={"/home/풍경3.jpg"} className="object-cover overflow-hidden" />
         </div>
 
         <div className="absolute p-5 bg-white rounded-t-3xl left-0 bottom-0 w-full h-2/3 mb-20 overflow-scroll scrollbar-hide">

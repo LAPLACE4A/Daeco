@@ -8,7 +8,6 @@ function RatesFeed({ isOpen, closeModal }){
         setRates(event.target.value)
     }
 
-
     return(
         <div id="rates-container" className={`fixed top-0 left-0 w-full h-full z-30 ${isOpen ? 'block' : 'hidden'}`}>
             
