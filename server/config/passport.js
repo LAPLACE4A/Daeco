@@ -22,20 +22,21 @@ passport.use(
         let user = await User.findOne({ email: email });
 
         if (user) {
-          return done(null, { user, isNewUser: false });
+          return done(null, user);
         } else {
           user = new User({
             name: name || "Unknown",
             email: email,
             profile_picture: "default.jpg",
             gender: "Unknown",
-            age: "Unknown",
+            age: 0,
             mbti: "Unknown",
             role: "user",
             point: 0,
           });
           await user.save();
-          return done(null, { user, isNewUser: true });
+          user.isNewUser = true;
+          return done(null, user);
         }
       } catch (error) {
         return done(error, false);
@@ -64,20 +65,21 @@ passport.use(
         let user = await User.findOne({ email: email });
 
         if (user) {
-          return done(null, { user, isNewUser: false });
+          return done(null, user);
         } else {
           user = new User({
             name: name || "Unknown",
             email: email,
             profile_picture: profilePictureUrl || "default.jpg",
             gender: gender || "Unknown",
-            age: age || "Unknown",
+            age: 0,
             mbti: "Unknown",
             role: "user",
             point: 0,
           });
           await user.save();
-          return done(null, { user, isNewUser: true });
+          user.isNewUser = true;
+          return done(null, user);
         }
       } catch (error) {
         return done(error, false);
@@ -101,20 +103,21 @@ passport.use(
         let user = await User.findOne({ email: email });
 
         if (user) {
-          return done(null, { user, isNewUser: false });
+          return done(null, user);
         } else {
           user = new User({
             name: name || "Unknown",
             email: email,
             profile_picture: "default.jpg",
             gender: "Unknown",
-            age: "Unknown",
+            age: 0,
             mbti: "Unknown",
             role: "user",
             point: 0,
           });
           await user.save();
-          return done(null, { user, isNewUser: true });
+          user.isNewUser = true;
+          return done(null, user);
         }
       } catch (error) {
         return done(error, false);
@@ -125,12 +128,12 @@ passport.use(
 
 // 사용자 세션 관리
 passport.serializeUser((user, done) => {
-  done(null, user.id); // 세션에 user.id 저장
+  done(null, user._id);
 });
 
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await User.findById(id); // 세션에서 id를 바탕으로 사용자 정보 조회
+    const user = await User.findById(id);
     done(null, user);
   } catch (err) {
     done(err, null);
