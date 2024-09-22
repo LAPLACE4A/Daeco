@@ -5,7 +5,7 @@ require("../config/passport");
 const router = express.Router();
 
 // 로그인 상태 확인
-router.get("/auth/status", (req, res) => {
+router.get("/status", (req, res) => {
   if (req.isAuthenticated()) {
     res.json({
       isAuthenticated: true,
