@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import Footer_nav from "./Footer_nav"
-import Loding from "./Loding"
 
 function Profile(){
 
@@ -10,10 +9,6 @@ function Profile(){
     const userProfile = {
         id:"김도붕",
         profile_picture:"/menu/menu_profile.svg"
-    }
-
-    const gotoRatedFeedList = () =>{
-        navigate("/")
     }
 
     const gotoChangeUserProfile = () =>{
