@@ -12,7 +12,7 @@ const FeedCard = ({ cards, openRatesModal, gotoCourseMaker }) => {
                     <div id="feed-container" key={index} className="flex flex-col w-full h-auto p-7 bg-white justify-around border-b-2 border-gray-300">
                         <button onClick={() => gotoCourseMaker(card)} className="">
                             <div id="user-info" className="flex flex-row">
-                                <img src={card.profile_picture} className="rounded-full size-10 mr-5"/>
+                                <img src="/logo/logo.svg" className="rounded-full size-10 mr-5"/>
                                 <div id="user-info-text" className="flex flex-col">
                                     <h1 className="font-LINESeedKR_Bd text-md">{card.user_id}</h1>
                                     <p className="text-sm">{card._id}</p>
